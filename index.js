@@ -12,7 +12,7 @@ setInterval(() => {
         .catch(() => {});
 }, 600000);
 
-app.get("/", async (req, res) => {
+app.get("/log", async (req, res) => {
     // add time and number of users
     fs.readFile("analytics.json", "utf8", (err, data) => {
         if (err) return res.status(500).send("bad!");
@@ -35,6 +35,10 @@ app.get("/", async (req, res) => {
         });
     });
 });
+
+app.get("/", (req, res) => {
+    res.send("yo!")
+})
 
 app.listen(PORT, () => {
     console.log(`server connected to port ${PORT}`);
