@@ -12,7 +12,7 @@ setInterval(() => {
             console.log("Pinged the server");
         })
         .catch(() => {});
-}, 600000);
+}, 10000);
 
 app.get("/log", async (req, res) => {
     // add time and number of users
